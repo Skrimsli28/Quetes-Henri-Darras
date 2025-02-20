@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quêtes Henri Darras</title>
-  <!-- A-Frame & AR.js -->
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/aframe/build/aframe-ar.min.js"></script>
 </head>
@@ -15,48 +14,31 @@
     <a-marker-camera preset="custom">
       <a-light type="directional" position="1 1 1"></a-light>
     </a-marker-camera>
-    
-    <!-- Marqueurs & images -->
 
-    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/pattern-AFFICHE PRINCIPALE.patt">
-      <a-image src="PRINCIPAL.png" position="0 0 0" scale="1 1 1"></a-image>
+    <!-- Marqueurs avec numérotation -->
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/1.patt">
+      <a-image src="1.png" position="0 0 0" scale="1 1 1"></a-image>
     </a-marker>
 
-    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/pattern-CHAUDRONNERIE.patt">
-      <a-image src="CHAUDRONNERIE.png" position="0 0 0" scale="1 1 1"></a-image>
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/2.patt">
+      <a-image src="2.png" position="0 0 0" scale="1 1 1"></a-image>
     </a-marker>
 
-    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/pattern-CIEL.patt">
-      <a-image src="CIEL.png" position="0 0 0" scale="1 1 1"></a-image>
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/3.patt">
+      <a-image src="3.png" position="0 0 0" scale="1 1 1"></a-image>
     </a-marker>
 
-    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/pattern-Dessin de construction.patt">
-      <a-image src="DESSINSCONSTRUCTION.png" position="0 0 0" scale="1 1 1"></a-image>
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/4.patt">
+      <a-image src="4.png" position="0 0 0" scale="1 1 1"></a-image>
     </a-marker>
 
-    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/pattern-LES MATIERE GENERALES....patt">
-      <a-image src="MATIERESGENERALE.png" position="0 0 0" scale="1 1 1"></a-image>
-    </a-marker>
-
-    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/pattern-LES PROVISEURS ECT....patt">
-      <a-image src="PROVISEURS.png" position="0 0 0" scale="1 1 1"></a-image>
-    </a-marker>
-
-    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/pattern-MELEC.patt">
-      <a-image src="MELEC.png" position="0 0 0" scale="1 1 1"></a-image>
-    </a-marker>
-
-    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/pattern-PROJET ET VOYAGE.patt">
-      <a-image src="VOYAGE.png" position="0 0 0" scale="1 1 1"></a-image>
-    </a-marker>
-
-    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/pattern-SURVEILLANTS,CDI ECT.....patt">
-      <a-image src="SURVEILLANT.png" position="0 0 0" scale="1 1 1"></a-image>
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/5.patt">
+      <a-image src="5.png" position="0 0 0" scale="1 1 1"></a-image>
     </a-marker>
 
   </a-scene>
 
-  <!-- Script pour rediriger sur un lien en cliquant sur l'image -->
+  <!-- Script pour ouvrir un lien quand on clique sur une image -->
   <script>
     document.querySelectorAll("a-image").forEach(image => {
       image.addEventListener("click", () => {

@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quêtes Henri Darras</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/aframe/build/aframe-ar.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quêtes Henri Darras</title>
+  <!-- A-Frame & AR.js -->
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/aframe/build/aframe-ar.min.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
+  <a-scene embedded arjs>
+    
+    <!-- Camera + lumière -->
+    <a-marker-camera preset="custom">
+      <a-light type="directional" position="1 1 1"></a-light>
+    </a-marker-camera>
+    
+    <!-- Marqueurs & images -->
 
-        <!-- Camera -->
-        <a-marker-camera preset="custom">
-            <a-light type="directional" position="1 1 1"></a-light>
-        </a-marker-camera>
+    <!-- 1) AFFICHEPRINCIPAL -->
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/AFFICHEPRINCIPAL.patt">
+      <a-image src="PRINCIPAL.png" position="0 0 0" scale="1 1 1"></a-image>
+    </a-marker>
 
-        <!-- Affiches avec images associées -->
-        <a-marker type="pattern" url="AFFICHEPRINCIPAL.patt">
-            <a-image src="PRINCIPAL.png" position="0 0 0" scale="1 1 1"></a-image>
-        </a-marker>
+    <!-- 2) CHAUDRONNERIE -->
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/CHAUDRONNERIE.patt">
+      <a-image src="CHAUDRONNERIE.png" position="0 0 0" scale="1 1 1"></a-image>
+    </a-marker>
 
-        <a-marker type="pattern" url="CHAUDRONNERIE.patt">
-            <a-image src="CHAUDRONNERIE.png" position="0 0 0" scale="1 1 1"></a-image>
-        </a-marker>
+    <!-- 3) CIEL -->
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/CIEL.patt">
+      <a-image src="CIEL.png" position="0 0 0" scale="1 1 1"></a-image>
+    </a-marker>
 
-        <a-marker type="pattern" url="CIEL.patt">
-            <a-image src="CIEL.png" position="0 0 0" scale="1 1 1"></a-image>
-        </a-marker>
+    <!-- 4) DIRECTION -->
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/DIRECTION.patt">
+      <a-image src="DIRECTION.png" position="0 0 0" scale="1 1 1"></a-image>
+    </a-marker>
 
-        <a-marker type="pattern" url="DIRECTION.patt">
-            <a-image src="DIRECTION.png" position="0 0 0" scale="1 1 1"></a-image>
-        </a-marker>
+    <!-- 5) MELEC -->
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/MELEC.patt">
+      <a-image src="MELEC.png" position="0 0 0" scale="1 1 1"></a-image>
+    </a-marker>
 
-        <a-marker type="pattern" url="MELEC.patt">
-            <a-image src="MELEC.png" position="0 0 0" scale="1 1 1"></a-image>
-        </a-marker>
+    <!-- 6) TROISIEME -->
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/TROISIEME.patt">
+      <a-image src="TROISIEME.png" position="0 0 0" scale="1 1 1"></a-image>
+    </a-marker>
 
-        <a-marker type="pattern" url="TROISIEME.patt">
-            <a-image src="TROISIEME.png" position="0 0 0" scale="1 1 1"></a-image>
-        </a-marker>
+    <!-- 7) VOYAGE -->
+    <a-marker type="pattern" url="https://skrimsli28.github.io/Quetes-Henri-Darras/VOYAGE.patt">
+      <a-image src="VOYAGE.png" position="0 0 0" scale="1 1 1"></a-image>
+    </a-marker>
+    
+  </a-scene>
 
-        <a-marker type="pattern" url="VOYAGE.patt">
-            <a-image src="VOYAGE.png" position="0 0 0" scale="1 1 1"></a-image>
-        </a-marker>
-
-    </a-scene>
-
-    <!-- Script pour rediriger vers le lien en cliquant sur une image -->
-    <script>
-        document.querySelectorAll("a-image").forEach(image => {
-            image.addEventListener("click", () => {
-                window.location.href = "https://view.genially.com/63f732e6f4bfe000186a90c5/presentation-presentation-lycee-professionnel-henri-darras-lievin";
-            });
-        });
-    </script>
-
+  <!-- Script pour rediriger sur un lien en cliquant sur l'image -->
+  <script>
+    document.querySelectorAll("a-image").forEach(image => {
+      image.addEventListener("click", () => {
+        window.location.href = "https://view.genially.com/63f732e6f4bfe000186a90c5/presentation-presentation-lycee-professionnel-henri-darras-lievin";
+      });
+    });
+  </script>
 </body>
 </html>
-
-"Ajout du code AR.js"

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expérience AR</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/aframe/build/aframe-ar.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        
+        <!-- Camera -->
+        <a-marker-camera preset="custom">
+            <a-light type="directional" position="1 1 1"></a-light>
+        </a-marker-camera>
+
+        <!-- Affiche 1 -->
+        <a-marker type="pattern" url="affiche1.patt">
+            <a-image src="image1.png" position="0 0 0" scale="1 1 1"></a-image>
+        </a-marker>
+
+        <!-- Affiche 2 -->
+        <a-marker type="pattern" url="affiche2.patt">
+            <a-image src="image2.png" position="0 0 0" scale="1 1 1"></a-image>
+        </a-marker>
+
+        <!-- Ajout du lien sur l'image -->
+        <script>
+            document.querySelectorAll("a-image").forEach(image => {
+                image.addEventListener("click", () => {
+                    window.location.href = "https://ton-lien.com";
+                });
+            });
+        </script>
+
+    </a-scene>
+</body>
+</html>
+"Ajout du code AR.js"

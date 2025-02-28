@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test AR.js</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/aframe/build/aframe-ar.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR.js with Multiple Markers</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js/aframe/build/aframe-ar.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
-        <a-marker preset="hiro">
-            <a-box position="0 0.5 0" material="color: red;"></a-box>
-        </a-marker>
-        <a-camera-static/>
-    </a-scene>
+  <a-scene embedded arjs>
+    <!-- Marqueur 1 : Pattern 1 -->
+    <a-marker type="pattern" url="pattern-1.patt" id="marker1">
+      <a-image src="MELEC.png" position="0 0.5 0" width="2" height="2" 
+               onclick="window.open('https://view.genially.com/63f732e6f4bfe000186a90c5/presentation-presentation-lycee-professionnel-henri-darras-lievin', '_blank');">
+      </a-image>
+    </a-marker>
+
+    <!-- Marqueur 2 : Pattern 2 -->
+    <a-marker type="pattern" url="pattern-2.patt" id="marker2">
+      <a-image src="DIRECTION.png" position="0 0.5 0" width="2" height="2" 
+               onclick="window.open('https://view.genially.com/63f732e6f4bfe000186a90c5/presentation-presentation-lycee-professionnel-henri-darras-lievin', '_blank');">
+      </a-image>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
 </body>
 </html>
+

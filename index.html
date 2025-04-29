@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte Au Trésor</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fdf5e6;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Pirata One', cursive;
+      background-color: #5b3e1d;
+      color: #fff;
+      margin: 0;
+      padding: 20px 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .grid-questions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .bloc {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+    }
+    .bloc img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .qcm-item {
+      text-align: left;
+      display: none;
+      margin-top: 10px;
+    }
+    .qcm-item.active {
+      display: block;
+    }
+    .qcm-item p {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .qcm-item label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+      .grid-questions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>La Carte Au Trésor</h1>
+  </header>
+
+  <main class="container">
+    <label for="studentName">Ton prénom et nom :</label>
+    <input type="text" id="studentName" placeholder="Ex. Marie Dupont" required />
+
+    <div class="grid-questions">
+	      <!-- Bloc 1 : DIRECTION -->
+      <div class="bloc">
+        <img src="DIRECTION.png" alt="DIRECTION" onclick="toggleQCM('qcm1', 'https://webxr.run/eJL7n7rrz4PYd')">
+        <div class="qcm-item" id="qcm1">
+          <h3>Indice 1 : DIRECTION</h3>
+          <p>1. Question 1</p>
+          <label><input type="radio" name="q1" value="A"> A</label>
+          <label><input type="radio" name="q1" value="B"> B</label>
+          <label><input type="radio" name="q1" value="C"> C</label>
+          <p>2. Question 2</p>
+          <label><input type="radio" name="q2" value="A"> A</label>
+          <label><input type="radio" name="q2" value="B"> B</label>
+          <label><input type="radio" name="q2" value="C"> C</label>
+          <p>3. Question 3</p>
+          <label><input type="radio" name="q3" value="A"> A</label>
+          <label><input type="radio" name="q3" value="B"> B</label>
+          <label><input type="radio" name="q3" value="C"> C</label>
+        </div>
+      </div>
+
+      <!-- Bloc 2 : SURVEILLANTS -->
+      <div class="bloc">
+        <img src="SURVEILLANTS.png" alt="SURVEILLANTS" onclick="toggleQCM('qcm2', 'https://webxr.run/eJL7n7rrz4PYd')">
+        <div class="qcm-item" id="qcm2">
+          <h3>Indice 2 : SURVEILLANTS</h3>
+          <p>4. Question 4</p>
+          <label><input type="radio" name="q4" value="A"> A</label>
+          <label><input type="radio" name="q4" value="B"> B</label>
+          <label><input type="radio" name="q4" value="C"> C</label>
+          <p>5. Question 5</p>
+          <label><input type="radio" name="q5" value="A"> A</label>
+          <label><input type="radio" name="q5" value="B"> B</label>
+          <label><input type="radio" name="q5" value="C"> C</label>
+          <p>6. Question 6</p>
+          <label><input type="radio" name="q6" value="A"> A</label>
+          <label><input type="radio" name="q6" value="B"> B</label>
+          <label><input type="radio" name="q6" value="C"> C</label>
+        </div>
+      </div>
+
+      <!-- Bloc 3 : ENSEIGNEMENTS -->
+      <div class="bloc">
+        <img src="ENSEIGNEMENTS.jpg" alt="ENSEIGNEMENTS" onclick="toggleQCM('qcm3', 'https://webxr.run/eJL7n7rrz4PYd')">
+        <div class="qcm-item" id="qcm3">
+          <h3>Indice 3 : ENSEIGNEMENTS</h3>
+          <p>7. Question 7</p>
+          <label><input type="radio" name="q7" value="A"> A</label>
+          <label><input type="radio" name="q7" value="B"> B</label>
+          <label><input type="radio" name="q7" value="C"> C</label>
+          <p>8. Question 8</p>
+          <label><input type="radio" name="q8" value="A"> A</label>
+          <label><input type="radio" name="q8" value="B"> B</label>
+          <label><input type="radio" name="q8" value="C"> C</label>
+          <p>9. Question 9</p>
+          <label><input type="radio" name="q9" value="A"> A</label>
+          <label><input type="radio" name="q9" value="B"> B</label>
+          <label><input type="radio" name="q9" value="C"> C</label>
+        </div>
+      </div>
+
+      <!-- Bloc 4 : PREPA -->
+      <div class="bloc">
+        <img src="PREPA.jpg" alt="PREPA" onclick="toggleQCM('qcm4', 'https://webxr.run/eJL7n7rrz4PYd')">
+        <div class="qcm-item" id="qcm4">
+          <h3>Indice 4 : PREPA</h3>
+          <p>10. Question 10</p>
+          <label><input type="radio" name="q10" value="A"> A</label>
+          <label><input type="radio" name="q10" value="B"> B</label>
+          <label><input type="radio" name="q10" value="C"> C</label>
+          <p>11. Question 11</p>
+          <label><input type="radio" name="q11" value="A"> A</label>
+          <label><input type="radio" name="q11" value="B"> B</label>
+          <label><input type="radio" name="q11" value="C"> C</label>
+          <p>12. Question 12</p>
+          <label><input type="radio" name="q12" value="A"> A</label>
+          <label><input type="radio" name="q12" value="B"> B</label>
+          <label><input type="radio" name="q12" value="C"> C</label>
+        </div>
+      </div>
+
+      <!-- Bloc 5 : CHAUDRONNERIE -->
+      <div class="bloc">
+        <img src="CHAUDRONNERIE.jpg" alt="CHAUDRONNERIE" onclick="toggleQCM('qcm5', 'https://webxr.run/eJL7n7rrz4PYd')">
+        <div class="qcm-item" id="qcm5">
+          <h3>Indice 5 : CHAUDRONNERIE</h3>
+          <p>13. Question 13</p>
+          <label><input type="radio" name="q13" value="A"> A</label>
+          <label><input type="radio" name="q13" value="B"> B</label>
+          <label><input type="radio" name="q13" value="C"> C</label>
+          <p>14. Question 14</p>
+          <label><input type="radio" name="q14" value="A"> A</label>
+          <label><input type="radio" name="q14" value="B"> B</label>
+          <label><input type="radio" name="q14" value="C"> C</label>
+          <p>15. Question 15</p>
+          <label><input type="radio" name="q15" value="A"> A</label>
+          <label><input type="radio" name="q15" value="B"> B</label>
+          <label><input type="radio" name="q15" value="C"> C</label>
+        </div>
+      </div>
+	        <!-- Bloc 6 : MELEC -->
+      <div class="bloc">
+        <img src="MELEC.jpg" alt="MELEC" onclick="toggleQCM('qcm6', 'https://webxr.run/eJL7n7rrz4PYd')">
+        <div class="qcm-item" id="qcm6">
+          <h3>Indice 6 : MELEC</h3>
+          <p>16. Question 16</p>
+          <label><input type="radio" name="q16" value="A"> A</label>
+          <label><input type="radio" name="q16" value="B"> B</label>
+          <label><input type="radio" name="q16" value="C"> C</label>
+          <p>17. Question 17</p>
+          <label><input type="radio" name="q17" value="A"> A</label>
+          <label><input type="radio" name="q17" value="B"> B</label>
+          <label><input type="radio" name="q17" value="C"> C</label>
+          <p>18. Question 18</p>
+          <label><input type="radio" name="q18" value="A"> A</label>
+          <label><input type="radio" name="q18" value="B"> B</label>
+          <label><input type="radio" name="q18" value="C"> C</label>
+        </div>
+      </div>
+
+      <!-- Bloc 7 : CIEL -->
+      <div class="bloc">
+        <img src="CIEL.jpg" alt="CIEL" onclick="toggleQCM('qcm7', 'https://webxr.run/eJL7n7rrz4PYd')">
+        <div class="qcm-item" id="qcm7">
+          <h3>Indice 7 : CIEL</h3>
+          <p>19. Question 19</p>
+          <label><input type="radio" name="q19" value="A"> A</label>
+          <label><input type="radio" name="q19" value="B"> B</label>
+          <label><input type="radio" name="q19" value="C"> C</label>
+          <p>20. Question 20</p>
+          <label><input type="radio" name="q20" value="A"> A</label>
+          <label><input type="radio" name="q20" value="B"> B</label>
+          <label><input type="radio" name="q20" value="C"> C</label>
+          <p>21. Question 21</p>
+          <label><input type="radio" name="q21" value="A"> A</label>
+          <label><input type="radio" name="q21" value="B"> B</label>
+          <label><input type="radio" name="q21" value="C"> C</label>
+        </div>
+      </div>
+
+      <!-- Bloc 8 : CONSTRUCTION -->
+      <div class="bloc">
+        <img src="CONSTRUCTION.png" alt="CONSTRUCTION" onclick="toggleQCM('qcm8', 'https://webxr.run/eJL7n7rrz4PYd')">
+        <div class="qcm-item" id="qcm8">
+          <h3>Indice 8 : CONSTRUCTION</h3>
+          <p>22. Question 22</p>
+          <label><input type="radio" name="q22" value="A"> A</label>
+          <label><input type="radio" name="q22" value="B"> B</label>
+          <label><input type="radio" name="q22" value="C"> C</label>
+          <p>23. Question 23</p>
+          <label><input type="radio" name="q23" value="A"> A</label>
+          <label><input type="radio" name="q23" value="B"> B</label>
+          <label><input type="radio" name="q23" value="C"> C</label>
+          <p>24. Question 24</p>
+          <label><input type="radio" name="q24" value="A"> A</label>
+          <label><input type="radio" name="q24" value="B"> B</label>
+          <label><input type="radio" name="q24" value="C"> C</label>
+        </div>
+      </div>
+
+      <!-- Bloc 9 : SORTIE -->
+      <div class="bloc">
+        <img src="SORTIE.jpg" alt="SORTIE" onclick="toggleQCM('qcm9', 'https://webxr.run/eJL7n7rrz4PYd')">
+        <div class="qcm-item" id="qcm9">
+          <h3>Indice 9 : SORTIE</h3>
+          <p>25. Question 25</p>
+          <label><input type="radio" name="q25" value="A"> A</label>
+          <label><input type="radio" name="q25" value="B"> B</label>
+          <label><input type="radio" name="q25" value="C"> C</label>
+          <p>26. Question 26</p>
+          <label><input type="radio" name="q26" value="A"> A</label>
+          <label><input type="radio" name="q26" value="B"> B</label>
+          <label><input type="radio" name="q26" value="C"> C</label>
+          <p>27. Question 27</p>
+          <label><input type="radio" name="q27" value="A"> A</label>
+          <label><input type="radio" name="q27" value="B"> B</label>
+          <label><input type="radio" name="q27" value="C"> C</label>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <button id="submitButton" onclick="envoyerReponses()">Valider mes réponses</button>
+    </div>
+	  </main>
+
+  <footer>
+    <div class="container" style="text-align: center; margin-top: 30px;">
+      <p>© 2025 Lycée Henri Darras.</p>
+    </div>
+  </footer>
+
+  <script>
+    let validated = false;
+
+    function toggleQCM(id, url) {
+      if (validated) return;
+
+      // Ouvrir le lien dans un nouvel onglet
+      window.open(url, "_blank");
+
+      // Afficher le QCM
+      const qcmBlock = document.getElementById(id);
+      if (qcmBlock) {
+        qcmBlock.classList.add("active");
+      }
+    }
+
+    const bonnesReponses = {
+      q1:'A', q2:'B', q3:'C',
+      q4:'A', q5:'B', q6:'C',
+      q7:'A', q8:'B', q9:'C',
+      q10:'A', q11:'B', q12:'C',
+      q13:'A', q14:'B', q15:'C',
+      q16:'A', q17:'B', q18:'C',
+      q19:'A', q20:'B', q21:'C',
+      q22:'A', q23:'B', q24:'C',
+      q25:'A', q26:'B', q27:'C'
+    };
+
+    function envoyerReponses() {
+      if (validated) return;
+
+      const nom = document.getElementById("studentName").value.trim();
+      if (!nom) {
+        alert("Merci d’entrer ton prénom et nom.");
+        return;
+      }
+
+      let score = 0;
+      const reponses = [];
+
+      for (let i = 1; i <= 27; i++) {
+        const radios = document.getElementsByName(`q${i}`);
+        let selected = "";
+        for (const radio of radios) {
+          if (radio.checked) {
+            selected = radio.value;
+            break;
+          }
+        }
+        reponses.push(selected);
+        if (selected === bonnesReponses[`q${i}`]) score++;
+      }
+
+      fetch("https://script.google.com/macros/s/AKfycbwSmLf6yD_uQODxzyQY-g6Nrg29aQrqnU5SVo4qrbnSUxR8a-8cP9586fzKzn1tYpMf/exec", {
+        method: "POST",
+        body: JSON.stringify({ nom, reponses, score }),
+        headers: { "Content-Type": "application/json" }
+      })
+      .then(() => {
+        alert(`Merci ${nom}, tu as terminé ! Ton score est ${score}/27 🎉`);
+        validated = true;
+        document.getElementById("submitButton").disabled = true;
+
+        // Masquer tous les QCM
+        const allQCM = document.querySelectorAll('.qcm-item');
+        allQCM.forEach(q => q.style.display = "none");
+
+        // Désactiver tous les boutons radio
+        const allInputs = document.querySelectorAll('input[type=radio]');
+        allInputs.forEach(input => input.disabled = true);
+      })
+      .catch(() => {
+        alert("Erreur lors de l'envoi. Veuillez réessayer.");
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+
